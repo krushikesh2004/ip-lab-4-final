@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized T-Shirt Order Form</title>
+    <script src="./index.js" defer></script> <!-- Link to external JavaScript file -->
+</head>
+<body>
+    <h1 style="margin: 20px;">Customized T-Shirt Order Form</h1>
+    
+    <form id="orderForm" action="javascript:void(0)" method="post">
+        <fieldset style="border-radius: 20px; margin:20px;">
+            <legend>Order Details</legend>
+
+            <!-- Tagline Input -->
+            <label for="tagline">Tagline on the Shirt:</label>
+            <input type="text" id="tagline" style="width:300px;" name="tagline" placeholder="Enter your custom tagline (Max 50 characters)" required maxlength="50"><br><br>
+
+            <!-- Color Dropdown -->
+            <label for="color">T-shirt Color:</label>
+            <select id="color" name="color" required>
+                <option value="" disabled selected>Select color</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+            </select><br><br>
+
+            <!-- Size Dropdown -->
+            <label for="size">T-shirt Size:</label>
+            <select id="size" name="size" required>
+                <option value="" disabled selected>Select size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option>
+                <option value="xxl">XXL</option>
+            </select><br><br>
+
+            <!-- Quantity Input -->
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="100" placeholder="1" required><br><br>
+
+            <!-- Delivery Date Input -->
+            <label for="delivery_date">Delivery Date:</label>
+            <input type="date" id="delivery_date" name="delivery_date" required><small id="dateError"></small><br>
+            <br><br>
+        </fieldset>
+
+        <fieldset style="margin: 20px; border-radius: 20px;">
+            <legend>Delivery Details</legend>
+
+            <!-- Recipient Name -->
+            <label for="name">Recipient's Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required><br><br>
+
+            <!-- Address Input -->
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Street address" required><br><br>
+
+            <!-- Email Input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
+
+            <!-- Phone Number Input -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="^[1-9][0-9]{9}$" required><br><br>
+        </fieldset>
+
+        <fieldset style="margin: 20px; border-radius: 20px;">
+            <legend>Additional Information</legend>
+
+            <!-- Additional Comments Text Area -->
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Any special instructions..."></textarea><br><br>
+        </fieldset>
+
+        <!-- Submit and Reset Buttons -->
+        <input type="submit" style="margin: 20px;" value="Place Order" onclick="submitOrder()">
+        <input type="reset" style="margin: 20px;" value="Reset Form">
+    </form>
+
+    <div id="receipt" style="margin: 20px;"></div> <!-- Area to display receipt -->
+</body>
+</html>
